@@ -8,13 +8,14 @@
     "backend"
   ],
   "scripts": {
-    "dev:frontend": "npm run dev --workspace=frontend",
-    "dev:backend": "npm run dev --workspace=backend",
-    "build:frontend": "npm run build --workspace=frontend",
-    "build:backend": "npm run build --workspace=backend",
-    "db:generate": "npm run db:generate --workspace=backend",
-    "build": "npm run db:generate && npm run build:frontend && npm run build:backend",
+    "dev:frontend": "bun run dev --workspace=frontend",
+    "dev:backend": "bun run dev --workspace=backend",
+    "build:frontend": "bun run build --workspace=frontend",
+    "build:backend": "bun run build --workspace=backend",
+    "db:generate": "bun run db:generate --workspace=backend",
+    "build": "bun run db:generate && bun run build:frontend && bun run build:backend",
     "deploy": "wrangler deploy",
-    "preview": "npm run build && npm run dev --workspace=backend"
+    "dev:preview": "bun run build && bun run dev --workspace=backend",
+    "preview": "bun run dev --workspace=backend"
   }
 }
